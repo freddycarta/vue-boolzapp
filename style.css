@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+ul{
+    list-style: none;
+}
+
 a {
     color: currentColor;
     text-decoration: none;
@@ -15,7 +19,7 @@ img {
 
 body {
 height: 100vh;
-background-color: grey;
+background-color: #009688;
 display: flex;
 align-items: center;
 justify-content: center;
@@ -23,9 +27,58 @@ justify-content: center;
 }
 
 #app {
-    max-width: 900px;
+    max-width: 90%;
     width: 100%;
     margin: 0 auto;
     height: 90%;
     background-color: white;
+    display: flex;
+}
+
+.chat, .sidebar {
+    /* border: 2px solid black;
+    padding: 20px; */
+    display: flex;
+    flex-direction: column;
+
+}
+
+.sidebar { 
+    flex-basis: 300px;
+}
+
+.chat {
+    flex-grow: 1;
+}
+
+.chat .messages {
+    flex-grow: 1;
+    background-image: url('../vue-boolzapp/img/mine.jpg');
+    background-size: cover;
+}
+
+.sidebar .contacts {
+    flex-grow: 1;
+
+}
+
+.toolbar {
+    background-color: rgb(200, 200, 200);
+    padding: 5px 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-details {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
 }
