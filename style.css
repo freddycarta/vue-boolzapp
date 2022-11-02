@@ -73,6 +73,10 @@ justify-content: center;
     height: 12vh;
 }
 
+.contacts {
+
+}
+
 .contact {
     display: flex;
     padding: 8px 5px 8px 12px;
@@ -102,6 +106,10 @@ justify-content: center;
 .search {
     padding: 10px 8px;
     background-color: #eeeeee;
+}
+
+.contacts {
+    overflow-y: scroll;
 }
 
 .search input {
