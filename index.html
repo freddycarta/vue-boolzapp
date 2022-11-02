@@ -17,7 +17,7 @@
             <div class="toolbar">
                 <div class="contact-details">
                     <figure class="avatar">
-                        <img src="./img/avatar_1.jpg" alt="">
+                        <img src="./img/avatar_io.jpg" alt="">
                     </figure>
                     <div class="contact-info">
                         <h5>Leonardo</h5>
@@ -36,13 +36,13 @@
                 <input type="text" placeholder="Inizia conversazione">
             </div>
             <ul class="contacts">
-                <li class="contact">
+                <li v-for="contact in contacts"  class="contact active">
                     <div class="contact-details">
                         <figure class="avatar">
-                            <img src="./img/avatar_2.jpg" alt="">
+                            <img src="`./img/avatar${contact.avatar}.jpg`" alt="">
                         </figure>
                         <div class="contact-info">
-                            <h5 class="contact-name">David Guetta</h5>
+                            <h5 class="contact-name">{{ contact.name }}</h5>
                             <p class="last-access">Ultimo accesso</p>
                         </div>
                         
@@ -50,7 +50,7 @@
                     </div>     
 
                 </li>
-                <li class="contact">
+                <!-- <li class="contact">
                     <div class="contact-details">
                         <figure class="avatar">
                             <img src="./img/avatar_4.jpg" alt="">
@@ -77,7 +77,7 @@
     
                     </div>     
 
-                </li>
+                </li> -->
             </ul>
 
         </div>
