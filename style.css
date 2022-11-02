@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    color: currentColor;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+body {
+height: 100vh;
+background-color: grey;
+display: flex;
+align-items: center;
+justify-content: center;
+
+}
+
+#app {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    height: 90%;
+    background-color: white;
+}
