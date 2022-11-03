@@ -19,7 +19,7 @@ img {
 
 body {
 height: 100vh;
-background-color: #009688;
+background: linear-gradient(179.75deg, #009688 23.12%, #d9dbd5 23.13%);
 display: flex;
 align-items: center;
 justify-content: center;
@@ -37,8 +37,6 @@ justify-content: center;
 }
 
 .chat, .sidebar {
-    /* border: 2px solid black;
-    padding: 20px; */
     display: flex;
     flex-direction: column;
 
@@ -64,17 +62,12 @@ justify-content: center;
 }
 
 .toolbar {
-    background-color: rgb(200, 200, 200);
+    background-color: #eaeaea;
     padding: 5px 8px;
     display: flex;
     align-items: center;
     gap: 10px;
-    border-radius: 5px;
     height: 12vh;
-}
-
-.contacts {
-
 }
 
 .contact {
@@ -125,6 +118,7 @@ justify-content: center;
     display: flex;
     flex-direction: column;
     gap: 10px;
+    overflow-y: scroll;
     
 }
 

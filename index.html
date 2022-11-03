@@ -36,10 +36,10 @@
                 <input type="text" placeholder="Inizia conversazione">
             </div>
             <ul class="contacts">
-                <li v-for="contact in contacts"  class="contact active">
+                <li v-for="contact in contacts"  class="contact">
                     <div class="contact-details">
                         <figure class="avatar">
-                            <img src="`./img/avatar${contact.avatar}.jpg`" alt="">
+                            <img :src="`./img/avatar${ contact.avatar }.jpg`" alt="">
                         </figure>
                         <div class="contact-info">
                             <h5 class="contact-name">{{ contact.name }}</h5>
@@ -86,10 +86,10 @@
             <div class="toolbar">
                 <div class="contact-details">
                     <figure class="avatar">
-                        <img src="./img/avatar_2.jpg" alt="">
+                        <img :src="`./img/avatar${ contacts[chatIndex].avatar }.jpg`" alt="">
                     </figure>
                     <div class="contact-info">
-                        <h5>Will Smith</h5>
+                        <h5 class="contact-name">{{ contacts[chatIndex].name }}</h5>
                         <p class="last-access">Ultimo accesso: Oscar</p>
                     </div>
                     
@@ -100,18 +100,33 @@
                 <i class="fa-solid fa-paperclip"></i>
             </div>
             <div class="messages">
-                <div class="message sent">
+                <div class="message sent" v-for="(element,i) in contacts[chatIndex].messages">
+                        {{ element.message }}
+                </div>
+                <!-- <div class="message sent">
                     Ciao
                 </div>
-                <div class="message sent">
-                    Bro
+
+                <div class="message received">
+                    wewe
                 </div>
                 <div class="message received">
                     wewe
                 </div>
+                <div class="message received">
+                    wewe
+                </div>
+                <div class="message received">
+                    wewe
+                </div>
+                <div class="message received">
+                    wewe
+                </div> -->
             </div>
             <div class="new-message">
                 <input type="text" placeholder="Scrivi">
+                <i class="fa-solid fa-microphone"></i>
+                
             </div>
         
         </div>
