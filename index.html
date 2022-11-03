@@ -36,14 +36,14 @@
                 <input type="text" placeholder="Inizia conversazione">
             </div>
             <ul class="contacts">
-                <li v-for="contact in contacts"  class="contact">
+                <li @click="setChatIndex(i)" v-for="(contact, i) in contacts"  class="contact">
                     <div class="contact-details">
                         <figure class="avatar">
                             <img :src="`./img/avatar${ contact.avatar }.jpg`" alt="">
                         </figure>
                         <div class="contact-info">
                             <h5 class="contact-name">{{ contact.name }}</h5>
-                            <p class="last-access">Ultimo accesso</p>
+                            <p class="last-access">Ultimo accesso...</p>
                         </div>
                         
     
@@ -51,34 +51,7 @@
                     <div>12:00</div>  
 
                 </li>
-                <!-- <li class="contact">
-                    <div class="contact-details">
-                        <figure class="avatar">
-                            <img src="./img/avatar_4.jpg" alt="">
-                        </figure>
-                        <div class="contact-info">
-                            <h5 class="contact-name">Alex</h5>
-                            <p class="last-access">Ultimo accesso</p>
-                        </div>
-                        
     
-                    </div>     
-
-                </li>
-                <li class="contact">
-                    <div class="contact-details">
-                        <figure class="avatar">
-                            <img src="./img/avatar_6.jpg " alt="">
-                        </figure>
-                        <div class="contact-info">
-                            <h5 class="contact-name">Michele</h5>
-                            <p class="last-access">Ultimo accesso</p>
-                        </div>
-                        
-    
-                    </div>     
-
-                </li> -->
             </ul>
 
         </div>
@@ -90,7 +63,7 @@
                     </figure>
                     <div class="contact-info">
                         <h5 class="contact-name">{{ contacts[chatIndex].name }}</h5>
-                        <p class="last-access">Ultimo accesso: Oscar</p>
+                        <p class="last-access">Ultimo accesso...</p>
                     </div>
                     
 
@@ -100,31 +73,13 @@
                 <i class="fa-solid fa-paperclip"></i>
             </div>
             <div class="messages">
-                <div class="message sent" v-for="(element,i) in contacts[chatIndex].messages">
+                <div class="message" :class="element.status" v-for="(element,i) in contacts[chatIndex].messages">
                         {{ element.message }}
                 </div>
-                <!-- <div class="message sent">
-                    Ciao
-                </div>
-
-                <div class="message received">
-                    wewe
-                </div>
-                <div class="message received">
-                    wewe
-                </div>
-                <div class="message received">
-                    wewe
-                </div>
-                <div class="message received">
-                    wewe
-                </div>
-                <div class="message received">
-                    wewe
-                </div> -->
             </div>
             <div class="new-message">
-                <input type="text" placeholder="Scrivi">
+                <i class="fa-regular fa-face-smile"></i>
+                <input @keyup.enter="send" type="text" v-model="text" placeholder="Scrivi">
                 <i class="fa-solid fa-microphone"></i>
                 
             </div>

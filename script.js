@@ -6,7 +6,8 @@ createApp(
     {
         data() {
             return{
-                chatIndex:3,
+                chatIndex:0,
+                text: '',
                 contacts: [
 {
 name: 'Michele',
@@ -173,8 +174,35 @@ status: 'received'
             }
         },
         methods: {
+            setChatIndex(i) {
+                this.chatIndex = i
+            },
+            send() {
+                const cleanedText = this.text.trim()
+
+                if (cleanedText === '') return
+
+                const message = {
+                    date: '10/01/2020 15:50:00',
+                    message: cleanedText,
+                    status: 'sent'
+                    }
+            console.log(message)
+            this.contacts [this.chatIndex].messages.push(message)
+            this.text=''
+
+            setTimeout(() => {
+                const message = {
+                    date: '10/01/2020 15:50:00',
+                    message: 'ok',
+                    status: 'received'
+                }
+            this.contacts [this.chatIndex].messages.push(message)
+            }, 1000)
+
+            },
             
-        }
+        },
 
     }
 ).mount('#app')

@@ -138,3 +138,20 @@ justify-content: center;
     align-self: flex-start;
     background-color: white;
 }
+
+.new-message{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 5px 10px;
+    background-color: seashell;
+}
+
+.new-message input {
+    height: 40px;
+    padding: 0 20px;
+    border-radius: 5px;
+    flex-grow: 1;
+    border: none;
+}
+
