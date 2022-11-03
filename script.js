@@ -178,7 +178,7 @@ status: 'received'
             filterContacts() {
                 return this.contacts.filter((el) => {
                     const { name } = el
-                    if( name.includes(this.search) ){
+                    if( name.toLowerCase().includes(this.search) ){
                         return true
                     }
                     return false
