@@ -33,10 +33,10 @@
             </div>
             <!-- <div>Avviso notifiche</div> -->
             <div class="search">
-                <input type="text" placeholder="Inizia conversazione">
+                <input @keyup="print" type="text" v-model="search" placeholder="Inizia conversazione">
             </div>
             <ul class="contacts">
-                <li @click="setChatIndex(i)" v-for="(contact, i) in contacts"  class="contact">
+                <li @click="setChatIndex(i)" v-for="(contact, i) in filterContacts"  class="contact">
                     <div class="contact-details">
                         <figure class="avatar">
                             <img :src="`./img/avatar${ contact.avatar }.jpg`" alt="">

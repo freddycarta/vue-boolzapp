@@ -8,6 +8,7 @@ createApp(
             return{
                 chatIndex:0,
                 text: '',
+                search:'',
                 contacts: [
 {
 name: 'Michele',
@@ -173,7 +174,21 @@ status: 'received'
 ],
             }
         },
+        computed: {
+            filterContacts() {
+                return this.contacts.filter((el) => {
+                    const { name } = el
+                    if( name.includes(this.search) ){
+                        return true
+                    }
+                    return false
+                })
+            
+            },
+        },
         methods: {
+            print() {console.log},
+            
             setChatIndex(i) {
                 this.chatIndex = i
             },
