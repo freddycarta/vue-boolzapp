@@ -9,6 +9,7 @@ createApp(
                 chatIndex:0,
                 text: '',
                 search:'',
+                activeContact: contacts[0],
                 contacts: [
 {
 name: 'Michele',
@@ -178,7 +179,7 @@ status: 'received'
             filterContacts() {
                 return this.contacts.filter((el) => {
                     const { name } = el
-                    if( name.toLowerCase().includes(this.search) ){
+                    if( name.toLowerCase().includes(this.search.toLowerCase()) ){
                         return true
                     }
                     return false
@@ -191,6 +192,9 @@ status: 'received'
             
             setChatIndex(i) {
                 this.chatIndex = i
+            },
+            setActiveContact(contact) {
+                this.activeContact = contact
             },
             send() {
                 const cleanedText = this.text.trim()
