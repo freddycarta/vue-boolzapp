@@ -20,7 +20,7 @@
                         <img src="./img/avatar_io.jpg" alt="">
                     </figure>
                     <div class="contact-info">
-                        <h5>Io, me, me stesso</h5>
+                        <h5>Leonardo</h5>
                     </div>
                     
 
@@ -31,12 +31,12 @@
                 <i class="fa-sharp fa-solid fa-circle-notch"></i>
 
             </div>
-
+            <!-- <div>Avviso notifiche</div> -->
             <div class="search">
                 <input @keyup="print" type="text" v-model="search" placeholder="Inizia conversazione">
             </div>
             <ul class="contacts">
-                <li @click="setActiveContact(contact)" v-for="(contact, i) in filterContacts"  class="contact">
+                <li @click="setChatIndex(i)" v-for="(contact, i) in filterContacts"  class="contact">
                     <div class="contact-details">
                         <figure class="avatar">
                             <img :src="`./img/avatar${ contact.avatar }.jpg`" alt="">
@@ -59,10 +59,10 @@
             <div class="toolbar">
                 <div class="contact-details">
                     <figure class="avatar">
-                        <img :src="`./img/avatar${ activeContact.avatar }.jpg`" alt="">
+                        <img :src="`./img/avatar${ contacts[chatIndex].avatar }.jpg`" alt="">
                     </figure>
                     <div class="contact-info">
-                        <h5 class="contact-name">{{ activeContact.name }}</h5>
+                        <h5 class="contact-name">{{ contacts[chatIndex].name }}</h5>
                         <p class="last-access">Ultimo accesso...</p>
                     </div>
                     
@@ -73,7 +73,7 @@
                 <i class="fa-solid fa-paperclip"></i>
             </div>
             <div class="messages">
-                <div class="message" :class="element.status" v-for="(element,i) in activeContact.messages">
+                <div class="message" :class="element.status" v-for="(element,i) in contacts[chatIndex].messages">
                         {{ element.message }}
                 </div>
             </div>

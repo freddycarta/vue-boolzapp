@@ -9,7 +9,7 @@ createApp(
                 chatIndex:0,
                 text: '',
                 search:'',
-                activeContact: contacts[0],
+                // activeContact: [0],
                 contacts: [
 {
 name: 'Michele',
@@ -193,9 +193,9 @@ status: 'received'
             setChatIndex(i) {
                 this.chatIndex = i
             },
-            setActiveContact(contact) {
-                this.activeContact = contact
-            },
+            // setActiveContact(contact) {
+            //     this.setActiveContact = contact
+            // },
             send() {
                 const cleanedText = this.text.trim()
 
