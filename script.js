@@ -9,7 +9,7 @@ createApp(
                 chatIndex:0,
                 text: '',
                 search:'',
-                // activeContact: [0],
+                activeContact:'',
                 contacts: [
 {
 name: 'Michele',
@@ -188,7 +188,9 @@ status: 'received'
             },
         },
         methods: {
-            print() {console.log},
+            print() {
+                console.log(this.filterContacts)
+            },
             
             setChatIndex(i) {
                 this.chatIndex = i
